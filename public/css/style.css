@@ -1,0 +1,25 @@
+:root {
+  --red: #FF7373;
+  --blue: #538EFF;
+  --yellow: #FFE072;
+  --black: #070707;
+  --white: #FDFDFD;
+  --light-gray: #F0F0F0;
+}
+
+body {
+  background-color: var(--light-gray);
+}
+
+header {
+  background-color: var(--white);
+  padding: 3rem;
+  box-shadow: 3px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+  display: grid;
+  column-gap: 2.5rem;
+  grid-template-columns: 1fr repeat(3, auto);
+}
+
+.icon {
+  height: 2.5rem;
+}
