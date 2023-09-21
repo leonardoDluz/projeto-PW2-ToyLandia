@@ -12,3 +12,9 @@
 
 - bootstrap
 - bootstrap-icons
+
+## iniciar 
+
+```
+npm install
+```
