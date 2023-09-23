@@ -1,0 +1,23 @@
+
+header {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-bottom: 1px solid rgb(218, 218, 218);
+  margin-bottom: 2.5rem;
+  box-shadow: 3px 3px 3px -3px rgba(0,0,0,0.1),0px 3px 3px -3px rgba(0,0,0,0.1),0px 3px 3px -3px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: grid;
+  column-gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr) repeat(3, auto);
+}
+
+.icon {
+  height: 2rem;
+}
+
+.btn-primary {
+  background-color: var(--blue);
+  border: none;
+}

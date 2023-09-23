@@ -12,6 +12,7 @@
 
 - bootstrap
 - bootstrap-icons
+- glidejs
 
 ## iniciar 
 
