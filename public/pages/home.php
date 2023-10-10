@@ -14,7 +14,7 @@ require __DIR__ . '/header.php';
         <li class="glide__slide slide">2</li>
       </ul>
     </div>
-
+  </div>
 
 </div>
 <?php

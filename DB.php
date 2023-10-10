@@ -47,7 +47,7 @@ class DB
         $valuesString .= "'$values[$i]'";
       }
     }
-    var_dump($valuesString);
+    
     return $valuesString;
   }
 

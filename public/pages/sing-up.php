@@ -2,10 +2,10 @@
 
 $title = 'Criar Conta';
 
-require __DIR__ . '/header.php';
+require_once __DIR__ . '/header.php';
 
 ?>
-<form class="container-xxl" action="../../src/insert/insert.php" method="post">
+<form class="container-xxl" action="../../usuario/usuario-criado.php" method="post">
   <input class="form-control input" type="text" placeholder="Nome de Usuário" aria-label="Nome de Usuário" name="name">
 
   <input class="form-control input" type="text" placeholder="Email" aria-label="Email" name="email">
@@ -18,4 +18,4 @@ require __DIR__ . '/header.php';
 </form>
 <?php
 
-require __DIR__ . '/footer.php';
+require_once __DIR__ . '/footer.php';
