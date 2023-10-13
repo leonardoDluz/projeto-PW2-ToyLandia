@@ -14,5 +14,5 @@ DB::insert('Usuario', $parameters, $values);
 $message = 'Usuario Cadastrado com Sucesso!';
 $title = 'Usuario Cadastrado';
 
-require_once __DIR__ . '/../public/pages/message.php';
+require_once __DIR__ . '/../message.php';
 
