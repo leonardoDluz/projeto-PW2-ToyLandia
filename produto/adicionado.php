@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/../is-admin.php';
 require_once __DIR__ . '/../DB.php';
 
 $productName = filter_input(INPUT_POST, 'name');

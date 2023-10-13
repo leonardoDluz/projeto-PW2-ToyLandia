@@ -15,8 +15,9 @@ $users = DB::select('Usuario');
 
 foreach ($users as $user) {
   if (
-    $user['nome'] == $username && $user['senha'] == $password || 
-    $user['email'] == $username && $user['senha'] == $password
+    $user['nome'] == $username  || 
+    $user['email'] == $username && 
+    $user['senha'] == $password
     ) {
     $title = 'Logado';
     $message = 'Login Efetuado Com Sucesso!';
@@ -25,9 +26,7 @@ foreach ($users as $user) {
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
 
-    if ($username == $admin[0]['nome'] && $password == $admin[0]['senha']) {
-      $_SESSION['admin'] = true;
-    }
+    $_SESSION['admin'] = $username == $admin[0]['nome'] && $password == $admin[0]['senha'] ? true : false;
 
     require_once __DIR__ . '/../message.php';
   }

@@ -2,6 +2,7 @@
 
 $title = 'Adicionar Produto';
 
+require_once __DIR__ . '/../is-admin.php';
 require_once __DIR__ . '/../header.php';
 require_once __DIR__ . '/../DB.php';
 
