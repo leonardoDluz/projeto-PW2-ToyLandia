@@ -1,4 +1,5 @@
 @import 'header.css';
+@import 'product.css';
 
 :root {
   --red: #FF7373;
@@ -33,9 +34,4 @@ body {
 
 .input {
   margin-bottom: 1.5rem;
-}
-
-.slide {
-  background-color: red;
-  height: 60vh;
 }

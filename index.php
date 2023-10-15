@@ -2,21 +2,36 @@
 
 $title = 'Home';
 
-require __DIR__ . '/header.php';
+require_once __DIR__ . '/DB.php';
+
+$productsQuery = DB::select('Produto');
+
+require_once __DIR__ . '/header.php';
 
 ?>
-<div class="container-xxl">
   <div class="glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
-        <li class="glide__slide slide">0</li>
-        <li class="glide__slide slide">1</li>
-        <li class="glide__slide slide">2</li>
+        <?php foreach($productsQuery as $product): ?>
+
+        <li class="glide__slide slide product-slide">
+          <div class="product">
+            <img class="product-slide-img" src="<?= $product['img'] ?>" alt="" srcset="">
+  
+            <h2><?= $product['titulo'] ?></h2>
+  
+            <p><?= $product['descricao'] ?></p>
+  
+            <h4>R$<?= $product['preco'] ?></h4>
+          </div>
+        </li>
+
+        <?php endforeach ?>  
       </ul>
     </div>
-  </div>
-
+  </div>  
+<div class="container-xxl">
 </div>
 <?php
 
-require __DIR__ . '/footer.php';
+require_once __DIR__ . '/footer.php';

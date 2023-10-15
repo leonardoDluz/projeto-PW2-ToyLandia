@@ -1,0 +1,32 @@
+.product-slide {
+    height: 70vh !important;
+}
+
+.product-slide-img {
+    width: 15vw;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: var(--white);
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-img {
+    width: 35vw;
+}
+
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    gap: 2.5rem;
+}

@@ -10,7 +10,7 @@ $categorys = DB::select('Categoria');
 
 ?>
 
-<form class="container-xxl" action="./adicionado.php" method="post" enctype="multipart/form-data">
+<form class="container-xxl container" action="./adicionado.php" method="post" enctype="multipart/form-data">
 
   <h1 class="mb-4"><?=$title?></h1>
 
