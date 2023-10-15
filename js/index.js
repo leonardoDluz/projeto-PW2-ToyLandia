@@ -1,8 +1,9 @@
-const loginAlert = document.querySelector("#loginAlert");
-const urlParams = new URLSearchParams(window.location.search);
+import { loginAuth } from "./login.js";
 
-const login = urlParams.get('login');
+new Glide('.glide', {
+  type: 'carousel',
+  startAt: 0,
+  perView: 3
+}).mount();
 
-if (login == 0) {
-  loginAlert.style.display = 'block';
-}
+loginAuth();
