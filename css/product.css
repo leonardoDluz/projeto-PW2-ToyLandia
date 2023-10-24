@@ -13,9 +13,12 @@
     padding: 1rem;
     border-radius: 15px;
     background-color: var(--white);
+    text-decoration: none;
+    color: var(--black);
 }
 
 .product-container {
+    gap: 1rem;
     display: flex;
     flex-direction: row;
 }
