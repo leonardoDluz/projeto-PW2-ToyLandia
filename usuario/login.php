@@ -10,7 +10,7 @@ require_once __DIR__ . '/../header.php';
 
   <input class="form-control input" type="password" placeholder="Senha" aria-label="Senha" name="password">
 
-  <div class="alert alert-warning" role="alert" id="loginAlert">Nome de Usuário ou Senha Incorretos</div>
+  <div role="alert" id="loginAlert"></div>
   
   <button class="btn btn-primary" type="submit">Entrar</button>
   

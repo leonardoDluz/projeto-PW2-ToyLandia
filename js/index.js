@@ -1,9 +1,12 @@
-import { loginAuth } from "./login.js";
+import formSubmissionAlert from "./formSubmissionAlert.js";
 
-new Glide('.glide', {
-  type: 'carousel',
-  startAt: 0,
-  perView: 4.2
-}).mount();
+const loginAuth = formSubmissionAlert('#loginAlert', 'login', {
+  success: 'Login efetuado com sucesso!',
+  error: 'Nome de usuário ou senha incorretos'
+});
 
-loginAuth();
+// new Glide('.glide', {
+//   type: 'carousel',
+//   startAt: 0,
+//   perView: 4.2
+// }).mount();
