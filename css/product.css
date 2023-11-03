@@ -3,7 +3,7 @@
 }
 
 .product-slide-img {
-    width: 15vw;
+    width: 14vw;
 }
 
 .product {
@@ -18,9 +18,11 @@
 }
 
 .product-container {
-    gap: 1rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 2rem;
 }
 
 .product-img {

@@ -3,6 +3,8 @@
 require_once __DIR__ . '/../is-admin.php';
 require_once __DIR__ . '/../DB.php';
 
+$host = $_SERVER['HTTP_HOST'];
+
 $productName = filter_input(INPUT_POST, 'name');
 $description = filter_input(INPUT_POST, 'description');
 $stock = filter_input(INPUT_POST, 'stock');
@@ -16,13 +18,14 @@ $imgPath = '../uploads/';
 move_uploaded_file($imgTempName, $imgPath . $imgName);
 $imgPath = "uploads/$imgName";
 
-DB::insert(
+$insert = DB::insert(
   'Produto', 
   ['idCategoria', 'titulo', 'descricao', 'estoque', 'preco', 'img'], 
   [$category, $productName, $description, $stock, $price, $imgPath]
 );
 
-$title = 'Produto Adicionado';
-$message = 'Produto Adicinado com Sucesso!'; 
-
-require_once __DIR__ . '/../message.php';
+if ($insert === false) {
+  header("Location: http://$host/produto/adicionar.php?success=0");
+} else {
+  header("Location: http://$host/produto/adicionar.php?success=1");
+}

@@ -5,9 +5,10 @@ require_once __DIR__ . '/../DB.php';
 
 $category = filter_input(INPUT_POST, 'category');
 
-DB::insert('Categoria', ['nomeCategoria'], [$category]);
+$insert = DB::insert('Categoria', ['nomeCategoria'], [$category]);
 
-$title = 'Categoria Adicionada';
-$message = 'Categoria Adicinada com Sucesso!'; 
-
-require_once __DIR__ . '/../message.php';
+if ($insert === false) {
+  header("Location: http://$host/categoria/adicionar.php?success=0");
+} else {
+  header("Location: http://$host/categoria/adicionar.php?success=1");
+}

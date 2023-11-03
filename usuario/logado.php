@@ -34,6 +34,6 @@ foreach ($users as $user) {
 
 if ($login === false) {
   header("Location: http://$host/usuario/login.php?login=0");
-} elseif ($login === true) {
+} else {
   header("Location: http://$host/usuario/login.php?login=1");
 }

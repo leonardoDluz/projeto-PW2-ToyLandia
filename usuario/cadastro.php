@@ -12,6 +12,8 @@ require_once __DIR__ . '/../header.php';
 
   <input class="form-control input" type="password" placeholder="Senha" aria-label="Senha" name="password">
 
+  <div role="alert" id="singInAlert"></div>
+
   <button class="btn btn-primary" type="submit">Criar Conta</button>
 
   <a href="/public/pages/login.php"> Já Tem Conta?</a>
