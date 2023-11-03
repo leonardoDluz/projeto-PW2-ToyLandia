@@ -27,7 +27,7 @@
         <img class="icon" src="/icons/plus-circle.svg" alt="adicionar produto">
       </a>
       <?php endif ?>
-      <a href="">
+      <a href="/carrinho.php  ">
         <img class="icon" src="/icons/cart-fill.svg" alt="carrinho">
       </a>
       <a href="/usuario/login.php">
