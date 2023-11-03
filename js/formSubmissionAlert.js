@@ -5,7 +5,7 @@ export default function formSubmissionAlert (selector, urlParam, message) {
     const param = urlParams.get(urlParam);
     
     if (param == '0') {
-      formAlert(alert, 'alert-success', message.error);
+      formAlert(alert, 'alert-warning', message.error);
     } else if (param == 1) {
       formAlert(alert, 'alert-success', message.success);
     }

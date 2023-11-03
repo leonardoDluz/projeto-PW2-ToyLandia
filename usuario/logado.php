@@ -15,9 +15,8 @@ $users = DB::select('Usuario');
 
 foreach ($users as $user) {
   if (
-    $user['nome'] == $username  || 
-    $user['email'] == $username && 
-    $user['senha'] == $password
+    ($user['nome'] === $username || $user['email'] === $username) && 
+    $user['senha'] === $password
     ) {
     $title = 'Logado';
     $message = 'Login Efetuado Com Sucesso!';
@@ -32,6 +31,9 @@ foreach ($users as $user) {
   }
 }
 
+
 if ($login === false) {
   header("Location: http://$host/usuario/login.php?login=0");
+} elseif ($login === true) {
+  header("Location: http://$host/usuario/login.php?login=1");
 }
