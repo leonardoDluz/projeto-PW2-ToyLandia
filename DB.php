@@ -23,6 +23,16 @@ class DB
     return $stmt->fetchAll();
   }
 
+  public static function selectWhereId(string $table, int $id): array
+  {
+    $connection = self::createConnection();
+
+    $command = "SELECT * FROM $table WHERE id$table = $id;"; 
+    $stmt = $connection->query($command);
+    
+    return $stmt->fetchAll();
+  }
+
   public static function update(string $table, array $parameters, array $values, int $id): void
   {
     $connection = self::createConnection();
