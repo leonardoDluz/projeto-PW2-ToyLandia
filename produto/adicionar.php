@@ -31,7 +31,7 @@ $categorys = DB::select('Categoria');
 
   <div class="mb-3">
     <label for="formImg" class="form-label">Imagem Do Produto</label>
-    <input class="form-control" type="file" id="formImg" name="img">
+    <input class="form-control" type="file" id="formImg" name="img" required>
   </div>
 
   <div role="alert" id="addProductAlert"></div>

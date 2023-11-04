@@ -2,7 +2,7 @@
 
 class DB
 {
-  public static function insert(string $table, array $parameters, array $values): void
+  public static function insert(string $table, array $parameters, array $values): int | false
   {
     $connection = self::createConnection();
 
@@ -10,7 +10,7 @@ class DB
     $parametersString = self::countParameters($parameters);
     $command = "INSERT INTO $table ($parametersString) VALUES ($valuesString);";
 
-    $connection->exec($command);
+    return $connection->exec($command);
   }
 
   public static function select(string $table): array
@@ -33,24 +33,24 @@ class DB
     return $stmt->fetchAll();
   }
 
-  public static function update(string $table, array $parameters, array $values, int $id): void
+  public static function update(string $table, array $parameters, array $values, int $id): int | false
   {
     $connection = self::createConnection();
-    $idTable = $id . $table;
 
     $updateString = self::getUpdateString($parameters, $values);
-    $command = "UPDATE $table SET $updateString WHERE id = $idTable;";
+    $command = "UPDATE $table SET $updateString WHERE id$table = $id;";
+    echo $command;
 
-    $connection->exec($command);
+    return $connection->exec($command);
   }
 
-  public static function delete(string $table, int $id): void
+  public static function delete(string $table, int $id): int | false
   {
     $connection = self::createConnection();
 
     $command = "DELETE * FROM $table WHERE id = $id;";
 
-    $connection->exec($command);
+    return $connection->exec($command);
   }
 
   private static function createConnection(): PDO
@@ -87,7 +87,7 @@ class DB
 
     for ($i = 0; $i < count($parameters); $i++) {
       if ($i < count($parameters) - 1) {
-        $parametersString .= "$parameters[$i],";
+        $parametersString .= "$parameters[$i], ";
       } else {
         $parametersString .= "$parameters[$i]";
       }
@@ -96,15 +96,15 @@ class DB
     return $parametersString;
   }
 
-  private function getUpdateString(array $parameters, array $values): string 
+  private static function getUpdateString(array $parameters, array $values): string 
   {
     $updateString = "";
 
     for ($i=0; $i < count($parameters); $i++) { 
       if ($i < count($parameters) - 1) {
-        $updateString .= "$parameters[$i] = $values[$i],";
+        $updateString .= "$parameters[$i] = '$values[$i]',";
       } else {
-        $updateString .= "$parameters[$i] = $values[$i]";
+        $updateString .= "$parameters[$i] = '$values[$i]'";
       }
     }
 

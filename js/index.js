@@ -32,10 +32,18 @@ const alerts = [
       success: 'Categoria adicionado com sucesso!',
       error: 'Erro ao adicionar categoria'
     }
-  } 
+  },
+  {
+    selector: '#editProductAlert',
+    urlParam: 'success',
+    message: {
+      success: 'Produto editado com sucesso!',
+      error: 'Erro ao editar produto'
+    }
+  }, 
 ];
 
-alerts.map(async alert => {formSubmissionAlert(alert.selector, alert.urlParam, alert.message)});
+alerts.map(async ({selector, urlParam, message}) => {formSubmissionAlert(selector, urlParam, message)});
 
 // new Glide('.glide', {
 //   type: 'carousel',
