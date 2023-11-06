@@ -48,7 +48,7 @@ class DB
   {
     $connection = self::createConnection();
 
-    $command = "DELETE * FROM $table WHERE id = $id;";
+    $command = "DELETE FROM $table WHERE id$table = $id;";
 
     return $connection->exec($command);
   }

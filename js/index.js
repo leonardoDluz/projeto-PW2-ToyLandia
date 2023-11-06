@@ -41,6 +41,14 @@ const alerts = [
       error: 'Erro ao editar produto'
     }
   }, 
+  {
+    selector: '#deleteProductAlert',
+    urlParam: 'delete',
+    message: {
+      success: 'Produto deletado com sucesso!',
+      error: 'Erro ao deletar produto'
+    }
+  }, 
 ];
 
 alerts.map(async ({selector, urlParam, message}) => {formSubmissionAlert(selector, urlParam, message)});

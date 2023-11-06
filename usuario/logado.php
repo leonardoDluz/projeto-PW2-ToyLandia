@@ -18,16 +18,12 @@ foreach ($users as $user) {
     ($user['nome'] === $username || $user['email'] === $username) && 
     $user['senha'] === $password
     ) {
-    $title = 'Logado';
-    $message = 'Login Efetuado Com Sucesso!';
     $login = true;
 
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
 
     $_SESSION['admin'] = $username == $admin[0]['nome'] && $password == $admin[0]['senha'] ? true : false;
-
-    require_once __DIR__ . '/../message.php';
   }
 }
 
