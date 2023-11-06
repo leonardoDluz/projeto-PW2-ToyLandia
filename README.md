@@ -13,10 +13,3 @@
 
 - bootstrap
 - bootstrap-icons
-- glidejs
-
-## iniciar 
-
-```
-npm install
-```

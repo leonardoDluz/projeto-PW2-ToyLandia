@@ -6,9 +6,7 @@
   <script src="/node_modules/@glidejs/glide/dist/glide.min.js" defer></script>
   <script src="/js/index.js" type="module" defer></script>
   <link rel="shortcut icon" href="/icons/logo.svg" type="image/x-icon">
-  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-  <link rel="stylesheet" href="/node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/style.css">
   <title>ToyLandia - <?=$title?></title>
 </head>
