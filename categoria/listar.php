@@ -18,6 +18,7 @@ $categorysQuery = DB::select('Categoria');
     <h2><?= $category['nomeCategoria'] ?></h2>
 
     <a href="deletar.php?id=<?= $category['idCategoria'] ?>" class="btn btn-primary">Deletar</a>
+    <a href="editar.php?id=<?= $category['idCategoria'] ?>" class="btn btn-primary">Editar</a>
 
   </div>
   <?php endforeach ?>  
