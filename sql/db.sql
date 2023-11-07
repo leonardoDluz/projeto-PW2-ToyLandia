@@ -1,8 +1,10 @@
-DROP DATABASE IF EXISTS ToyLandia;
+-- DROP DATABASE IF EXISTS ToyLandia;
 
-create schema if not exists ToyLandia;
+-- create schema if not exists ToyLandia;
 
-create table if not exists ToyLandia.Usuario(
+use ToyLandia;
+
+create table if not exists Usuario(
 idUsuario int not null auto_increment,
 nome varchar(180) not null,
 email varchar(100) not null,
@@ -11,19 +13,19 @@ adm boolean not null,
 primary key(idUsuario)
 );
 
-create table if not exists ToyLandia.Categoria(
+create table if not exists Categoria(
 idCategoria int not null auto_increment,
 nomeCategoria varchar(200) not null,
 primary key(idCategoria)
 );
 
-create table if not exists ToyLandia.MeioPagamento(
+create table if not exists MeioPagamento(
 idMeioPagamento int not null auto_increment,
 nomeMeioPagamento varchar(100) not null,
 primary key(idMeioPagamento)
 );
 
-create table if not exists ToyLandia.Produto(
+create table if not exists Produto(
 idProduto int not null auto_increment,
 idCategoria int not null,
 titulo varchar(255) not null,
@@ -33,10 +35,10 @@ estoque int not null,
 PRIMARY KEY(idProduto),
 constraint fk_produto_categoria
 foreign key(idCategoria)
-references ToyLandia.Categoria(idCategoria)
+references Categoria(idCategoria)
 );
 
-create table if not exists ToyLandia.Pedido(
+create table if not exists Pedido(
 idPedido int not null auto_increment,
 fechado boolean not null,
 endereco varchar(255) not null,
@@ -46,11 +48,11 @@ idMeioPagamento int not null,
 primary key(idPedido),
 constraint fk_usuario_pedido
 foreign key(idUsuario)
-references ToyLandia.Usuario(idUsuario),
+references Usuario(idUsuario),
 constraint fk_produto_pedido
 foreign key(idProduto)
-references ToyLandia.Produto(idProduto),
+references Produto(idProduto),
 constraint fk_meiopag_pedido
 foreign key(idMeioPagamento)
-references ToyLandia.MeioPagamento(idMeioPagamento)
+references MeioPagamento(idMeioPagamento)
 );

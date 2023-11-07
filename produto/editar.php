@@ -11,8 +11,11 @@ $id = filter_input(INPUT_GET, 'id');
 $categorys = DB::select('Categoria');
 $product = DB::selectWhereId('Produto', $id);
 $product = $product[0];
+$isSelected;
 
-$isSelected = $product['idCategoria'] === $category['idCategoria'] ? 'selected' : '';
+foreach($categorys as $category) {
+  $isSelected = $product['idCategoria'] === $category['idCategoria'] ? 'selected' : ' ';
+}
 
 ?>
 
@@ -22,16 +25,17 @@ $isSelected = $product['idCategoria'] === $category['idCategoria'] ? 'selected' 
 
   <input type="hidden" name="id" value="<?= $product['idProduto'] ?>">
 
-  <input class="form-control input" type="text" placeholder="Nome do Produto" aria-label="Nome do Produto" name="name" required 
+  <input class="form-control input" type="text" placeholder="Nome do Produto" aria-label="Nome do Produto" name="name" required minlength="5"
   value="<?= $product['titulo'] ?>">
 
-  <input class="form-control input" type="text" placeholder="Descrição" aria-label="Descrição" name="description" required 
-  value="<?= $product['descricao'] ?>">
+  <textarea class="form-control input" type="text" placeholder="Descrição" aria-label="Descrição" name="description" rows="3" required minlength="5">
+  <?= $product['descricao'] ?>
+  </textarea>
 
-  <input class="form-control input" type="number" placeholder="Estoque" aria-label="Estoque" name="stock" required 
+  <input class="form-control input" type="number" placeholder="Estoque" aria-label="Estoque" name="stock" required minlength="5"
   value="<?= $product['estoque'] ?>">
 
-  <input class="form-control input" type="number" placeholder="Preço" aria-label="Preço" name="price" required 
+  <input class="form-control input" type="number" placeholder="Preço" aria-label="Preço" name="price" required minlength="5"
   value="<?= $product['preco'] ?>">
 
   <select class="form-select mb-3" name="category">

@@ -20,7 +20,10 @@
         <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="button-search">
         <button class="btn btn-primary" type="submit" id="button-search"><img src="/icons/search.svg"></button>
       </form>
-      <?php session_start(); if($_SESSION['admin'] == true): ?>
+      <?php 
+      session_start(); 
+      error_reporting(0);
+      if(array_key_exists('admin', $_SESSION) && $_SESSION['admin'] == true): ?>
       <a href="/admin.php">
         <img class="icon" src="/icons/plus-circle.svg" alt="adicionar produto">
       </a>

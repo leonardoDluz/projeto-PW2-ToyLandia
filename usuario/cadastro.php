@@ -16,7 +16,7 @@ require_once __DIR__ . '/../header.php';
 
   <button class="btn btn-primary" type="submit">Criar Conta</button>
 
-  <a href="/public/pages/login.php"> Já Tem Conta?</a>
+  <a href="/usuario/login.php"> Já Tem Conta?</a>
 </form>
 <?php
 

@@ -10,7 +10,7 @@ require_once __DIR__ . '/header.php';
 
 ?>
 
-<div class="container-xxl product-container">
+<div class="container-xxl products-container">
 
   <?php foreach($productsQuery as $product): ?>
   <a href="./produto/produto.php?id=<?= $product['idProduto'] ?>" class="product">

@@ -55,28 +55,20 @@ class DB
 
   private static function createConnection(): PDO
   {
-    self::getEnv();
+    // self::getEnv();
 
     $connection = new PDO(
-        'mysql:host=' . $_ENV['HOST'] . ';dbname=' . $_ENV['DB_NAME'],
-        $_ENV['USER'],
-        $_ENV['PASSWORD']
+      'mysql:host=localhost;dbname=ToyLandia',
+      'root',
+      'Intel@2022'
+        // 'mysql:host=108.181.92.66;dbname=toylandia_db',
+        // 'toy',
+        // 'ToyLandia#2023'
     );
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
     return $connection;
-  }
-
-  public static function getEnv()
-  {
-    $parsed = parse_ini_file('./environment.ini', true);
-
-    $_ENV['ENVIRONMENT'] = $parsed['ENVIRONMENT'];
-
-    foreach ($parsed[$parsed['ENVIRONMENT']] as $key => $value) {
-      $_ENV[$key] = $value;
-    }
   }
 
   private static function getQueryValues(array $values): string

@@ -14,13 +14,13 @@ $categorys = DB::select('Categoria');
 
   <h1 class="mb-4"><?=$title?></h1>
 
-  <input class="form-control input" type="text" placeholder="Nome do Produto" aria-label="Nome do Produto" name="name" required>
+  <input class="form-control input" type="text" placeholder="Nome do Produto" aria-label="Nome do Produto" name="name" required minlength="5">
 
-  <input class="form-control input" type="text" placeholder="Descrição" aria-label="Descrição" name="description" required>
+  <textarea class="form-control input" type="text" placeholder="Descrição" aria-label="Descrição" name="description" rows="3" required minlength="5"></textarea>
 
-  <input class="form-control input" type="number" placeholder="Estoque" aria-label="Estoque" name="stock" required>
+  <input class="form-control input" type="number" placeholder="Estoque" aria-label="Estoque" name="stock" required minlength="5">
 
-  <input class="form-control input" type="number" placeholder="Preço" aria-label="Preço" name="price" required>
+  <input class="form-control input" type="number" placeholder="Preço" aria-label="Preço" name="price" required minlength="5">
 
   <select class="form-select mb-3" name="category">
     <option selected>Selecione a Categoria</option>

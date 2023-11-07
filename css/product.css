@@ -19,9 +19,16 @@
 
 .product a {
     margin-top: 1rem;
+    width: 18rem;
 }
 
 .product-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.products-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -29,10 +36,11 @@
 }
 
 .product-img {
-    width: 35vw;
+    width: 35rem;
 }
 
 .product-info-container {
+    width: 40rem;
     display: flex;
     flex-direction: column;
     padding: 2rem 5rem;

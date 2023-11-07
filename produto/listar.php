@@ -10,7 +10,7 @@ $productsQuery = DB::select('Produto');
 
 ?>
 <div id="deleteProductAlert"></div>
-<div class="container-xxl product-container">
+<div class="container-xxl products-container">
 
   <?php foreach($productsQuery as $product): ?>
   <div  class="product">
